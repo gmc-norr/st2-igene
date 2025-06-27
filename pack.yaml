@@ -1,0 +1,9 @@
+---
+ref: igene
+name: igene
+description: GMC Norr pack for using the iGene API
+version: 0.0.0
+python_versions:
+  - "3"
+author: Moa Lundkvist
+email: moa.lundkvist@regionvasterbotten.se

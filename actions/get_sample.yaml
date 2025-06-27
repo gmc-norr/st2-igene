@@ -1,0 +1,35 @@
+---
+name: get_sample
+runner_type: http-request
+description: Get sequencing sample from iGene
+enabled: true
+entry_point: ""
+parameters:
+  api_key:
+    description: iGene API key
+    type: string
+    secret: true
+    required: true
+  sample:
+    description: id of sample to get.
+    type: string
+    required: true
+  method:
+    description: HTTP method
+    type: string
+    default: GET
+    immutable: true
+    required: true
+  headers:
+    description: Header with API key.
+    immutable: true
+    required: true
+    default: 
+      api-key: "{{ api_key }}"
+      Content-Type: application/json
+  url:
+    description: Request URL
+    type: string
+    default: "{{ config_context.base_url }}/worksheets/seq_sample/{{ sample | urlencode }}"
+    immutable: true
+    required: true
