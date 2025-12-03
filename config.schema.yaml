@@ -3,3 +3,9 @@ base_url:
   description: iGene API base URL.
   type: string
   required: true
+
+api_key:
+  description: iGene API api key
+  type: string
+  required: true
+  secret: true

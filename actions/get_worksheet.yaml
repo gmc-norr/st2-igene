@@ -9,6 +9,7 @@ parameters:
     description: iGene API key
     type: string
     secret: true
+    default: "{{config_context.api_key}}"
     required: true
   status:
     description: status to filter worksheets on.
