@@ -5,6 +5,8 @@
 Example:
 ```yaml
 base_url: http://localhost:6000
+
+api_key: <igene_api_key>
 ```
 
 ## Actions
