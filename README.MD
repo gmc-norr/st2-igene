@@ -4,7 +4,7 @@
 
 Example:
 ```yaml
-base_url: http://localhost:6000 
+base_url: http://localhost:6000
 ```
 
 ## Actions
@@ -17,4 +17,4 @@ get_sample       | Get information about a sequencing sample
 
 
 ## Requirements
-Requires iGen API >=0.3.0
+Requires iGene API >=0.5.0

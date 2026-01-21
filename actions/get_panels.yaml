@@ -33,7 +33,7 @@ parameters:
     description: Header with API key.
     immutable: true
     required: true
-    default: 
+    default:
       api-key: "{{ api_key }}"
       Content-Type: application/json
   url:
