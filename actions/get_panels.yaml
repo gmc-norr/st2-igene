@@ -16,7 +16,7 @@ parameters:
     type: string
     required: false
   gene_id:
-    description: Gene id to filter panels on.
+    description: Gene ID to filter panels on.
     type: string
     required: false
   panel:
@@ -39,6 +39,6 @@ parameters:
   url:
     description: Request URL
     type: string
-    default: "{{ config_context.base_url }}/gene_panels/{% if gene is not none %}?gene={{ gene | urlencode }}{% endif %}{% if gene_id is not none %}?gene={{ gene_id | urlencode }}{% endif %}{% if panel is not none %}{{ panel | urlencode }}{% endif %}"
+    default: "{{ config_context.base_url }}/gene_panels{% if gene is not none %}?gene={{ gene | urlencode }}{% endif %}{% if gene_id is not none %}?gene={{ gene_id | urlencode }}{% endif %}{% if panel is not none %}/{{ panel | urlencode }}{% endif %}"
     immutable: true
     required: true

@@ -11,8 +11,8 @@ parameters:
     secret: true
     default: "{{config_context.api_key}}"
     required: true
-  sample:
-    description: id of sample to get.
+  sample_id:
+    description: ID of the sample to get.
     type: string
     required: true
   method:
@@ -31,6 +31,6 @@ parameters:
   url:
     description: Request URL
     type: string
-    default: "{{ config_context.base_url }}/worksheets/seq_sample/{{ sample | urlencode }}"
+    default: "{{ config_context.base_url }}/worksheets/seq_sample/{{ sample_id | urlencode }}"
     immutable: true
     required: true
