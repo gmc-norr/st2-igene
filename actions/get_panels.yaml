@@ -39,6 +39,6 @@ parameters:
   url:
     description: Request URL
     type: string
-    default: "{{ config_context.base_url }}/gene_panels{% if gene is not none %}?gene={{ gene | urlencode }}{% endif %}{% if gene_id is not none %}?gene={{ gene_id | urlencode }}{% endif %}{% if panel is not none %}/{{ panel | urlencode }}{% endif %}"
+    default: "{{ config_context.base_url }}/gene_panels{% if gene is not none %}?gene={{ gene | urlencode }}{% endif %}{% if gene_id is not none %}?gene_id={{ gene_id | urlencode }}{% endif %}{% if panel is not none %}/{{ panel | urlencode }}{% endif %}"
     immutable: true
     required: true
