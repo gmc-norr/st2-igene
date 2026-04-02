@@ -21,7 +21,7 @@ class iGeneAPIRequest(Action):
             f"igene request url={req.url} method={req.method} data={req.body}"
         )
 
-        res = self.session.send(req)
+        res = self.session.send(req, verify="/etc/ssl/certs/ca-certificates.crt")
 
         try:
             body = res.json()
@@ -63,5 +63,5 @@ class iGeneAPIRequest(Action):
 
         url = f"{self.config.get('base_url', '')}/{endpoint}"
         return requests.Request(
-            url=url, method="GET", params=clean_params, headers=headers
+            url=url, method="GET", params=clean_params, headers=headers,
         ).prepare()
