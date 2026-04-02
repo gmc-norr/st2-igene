@@ -1,9 +1,9 @@
 ---
 name: get_panels
-runner_type: http-request
+runner_type: python-script
 description: Get panels from iGene
 enabled: true
-entry_point: ""
+entry_point: "igene_request.py"
 parameters:
   api_key:
     description: iGene API key
@@ -23,22 +23,9 @@ parameters:
     description: Get genes of panels.
     type: string
     required: false
-  method:
-    description: HTTP method
-    type: string
-    default: GET
-    immutable: true
-    required: true
-  headers:
-    description: Header with API key.
-    immutable: true
-    required: true
-    default:
-      api-key: "{{ api_key }}"
-      Content-Type: application/json
-  url:
+  endpoint:
     description: Request URL
     type: string
-    default: "{{ config_context.base_url }}/gene_panels{% if gene is not none %}?gene={{ gene | urlencode }}{% endif %}{% if gene_id is not none %}?gene_id={{ gene_id | urlencode }}{% endif %}{% if panel is not none %}/{{ panel | urlencode }}{% endif %}"
+    default: "gene_panels{% if gene is not none %}?gene={{ gene | urlencode }}{% endif %}{% if gene_id is not none %}?gene_id={{ gene_id | urlencode }}{% endif %}{% if panel is not none %}/{{ panel | urlencode }}{% endif %}"
     immutable: true
     required: true

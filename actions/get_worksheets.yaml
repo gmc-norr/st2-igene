@@ -31,23 +31,10 @@ parameters:
     description: How many worksheets to show per page
     type: integer
     default: 20
-  method:
-    description: HTTP method
-    type: string
-    default: GET
-    immutable: true
-    required: true
-  headers:
-    description: Header with API key.
-    immutable: true
-    required: true
-    default:
-      api-key: "{{ api_key }}"
-      Content-Type: application/json
-  url:
+  endpoint:
     description: Request URL
     type: string
-    default: "{{ config_context.base_url }}/worksheets{% if worksheet_id is not none %}/{{ worksheet_id | urlencode }}{% endif %}\
+    default: "worksheets{% if worksheet_id is not none %}/{{ worksheet_id | urlencode }}{% endif %}\
       {% if worksheet_id is none %}?page={{ page }}&page_size={{ page_size }}\
       {% if status is not none %}&status={{ status | urlencode }}{% endif %}\
       {% if detail %}&detail={{ detail | urlencode }}{% endif %}{% endif %}"
