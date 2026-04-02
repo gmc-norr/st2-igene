@@ -1,9 +1,9 @@
 ---
 name: get_worksheets
-runner_type: http-request
+runner_type: python-script
 description: Get worksheets from iGene
 enabled: true
-entry_point: ""
+entry_point: "igene_request.py"
 parameters:
   api_key:
     description: iGene API key
@@ -34,9 +34,16 @@ parameters:
   endpoint:
     description: Request URL
     type: string
-    default: "worksheets{% if worksheet_id is not none %}/{{ worksheet_id | urlencode }}{% endif %}\
-      {% if worksheet_id is none %}?page={{ page }}&page_size={{ page_size }}\
-      {% if status is not none %}&status={{ status | urlencode }}{% endif %}\
-      {% if detail %}&detail={{ detail | urlencode }}{% endif %}{% endif %}"
+    default: "worksheets{% if worksheet_id is not none %}/{{ worksheet_id | urlencode }}{% endif %}"
+    immutable: true
+    required: true
+  params:
+    description: Request parameters
+    type: object
+    default:
+      page: "{% if worksheet_id is none %}{{ page }}{% endif %}"
+      page_size: "{% if worksheet_id is not none %}{{ page_size }}{% endif %}"
+      status: "{% if status is not none %}{{ status | urlencode }}{% endif %}"
+      detail: "{% if detail is not none %}{{ detail | urlencode }}{% endif %}"
     immutable: true
     required: true

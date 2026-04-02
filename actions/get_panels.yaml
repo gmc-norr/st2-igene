@@ -26,6 +26,14 @@ parameters:
   endpoint:
     description: Request URL
     type: string
-    default: "gene_panels{% if gene is not none %}?gene={{ gene | urlencode }}{% endif %}{% if gene_id is not none %}?gene_id={{ gene_id | urlencode }}{% endif %}{% if panel is not none %}/{{ panel | urlencode }}{% endif %}"
+    default: "gene_panels{% if panel is not none %}/{{ panel | urlencode }}{% endif %}"
+    immutable: true
+    required: true
+  params:
+    description: Request parameters
+    type: object
+    default:
+      gene: "{% if gene is not none %}{{ gene }}{% endif %}"
+      gene_id: "{% if gene_id is not none %}{{ gene_id }}{% endif %}"
     immutable: true
     required: true

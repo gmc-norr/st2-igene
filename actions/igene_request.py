@@ -1,5 +1,6 @@
 from typing import Any, Dict, Optional, Tuple
 import requests
+from simplejson import JSONDecodeError
 from st2common.runners.base_action import Action
 
 
@@ -25,7 +26,7 @@ class iGeneAPIRequest(Action):
 
         try:
             body = res.json()
-        except requests.exceptions.JSONDecodeError:
+        except JSONDecodeError:
             body = res.text
 
         if res.status_code != 200:

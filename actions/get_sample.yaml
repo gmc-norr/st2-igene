@@ -1,9 +1,9 @@
 ---
 name: get_sample
-runner_type: http-request
+runner_type: python-script
 description: Get sequencing sample from iGene
 enabled: true
-entry_point: ""
+entry_point: "igene_request.py"
 parameters:
   api_key:
     description: iGene API key
