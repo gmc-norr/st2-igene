@@ -2,7 +2,7 @@
 ref: igene
 name: igene
 description: GMC Norr pack for using the iGene API
-version: 0.0.0 # x-release-please-version
+version: 1.0.0 # x-release-please-version
 python_versions:
   - "3"
 author: Moa Lundkvist
