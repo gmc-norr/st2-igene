@@ -15,9 +15,17 @@ parameters:
     description: ID of the sample to get.
     type: string
     required: true
+  processed:
+    description: ID of the sample to get.
+    type: boolean
+    default: false
   endpoint:
     description: Request URL
     type: string
-    default: "worksheets/seq_sample/{{ sample_id | urlencode }}"
+    default: "worksheets/{% if processed %}{{ 'p' }}{% endif %}seq_sample/{{ sample_id | urlencode }}"
     immutable: true
     required: true
+  timeout:
+    type: integer
+    description: Seconds to timeout
+    default: 10
