@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/gmc-norr/st2-igene/compare/v1.0.0...v1.1.0) (2026-11-04)
+
+
+### Features
+
+* add `processed` parameter to `get_sample` to reach PSeq endpoint ([#9](https://github.com/gmc-norr/st2-igene/issues/9)) ([8584e94](https://github.com/gmc-norr/st2-igene/commit/8584e94d956c0485f6e8d77e0c714a510a8cb445))
+
+
+### Bug Fixes
+
+* use page size param when there is no worksheet id ([#7](https://github.com/gmc-norr/st2-igene/issues/7)) ([9bc741d](https://github.com/gmc-norr/st2-igene/commit/9bc741db0ddd6c3c72a62f107a5b87b753646467))
+
 ## 1.0.0 (2026-04-09)
 
 
